@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl" suppressHydrationWarning>
       <body className={`${vazirFont.variable}  font-sans `}>
-        <Header />
+        <Header/>
         <div className="xl:max-w-screen-xl container">{children}</div>
       </body>
     </html>

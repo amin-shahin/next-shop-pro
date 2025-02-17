@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 
 function Header() {
   return (
@@ -17,7 +16,7 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link className="block py-2" href={"/auth"}>
+            <Link className="block py-2" href={"/signin"}>
               ورود
             </Link>
           </li>
