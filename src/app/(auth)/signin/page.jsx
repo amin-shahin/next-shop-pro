@@ -8,7 +8,10 @@ function SignIn() {
     setPhoneNumber(e.target.value);
   };
 
-  const onSubmit = () => {};
+  const sendOTPCode = (e) => {
+    e.preventDefault();
+    
+  };
 
   return (
     <div className="w-full flex justify-center">
@@ -16,7 +19,7 @@ function SignIn() {
         <SendOTPForm
           phoneNumber={phoneNumber}
           onChange={phoneNumberHandler}
-          onSubmit={onSubmit}
+          onSubmit={sendOTPCode}
         />
       </div>
     </div>
