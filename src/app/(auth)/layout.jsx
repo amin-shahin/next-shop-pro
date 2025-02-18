@@ -8,7 +8,7 @@ function layoutAuth({ children }) {
       <body className={`${vazirFont.variable}  font-sans `}>
         <Link href={'/'}>بازگشت به صفحه اصلی</Link>
         <div className="flex items-center justify-center w-full min-h-svh">
-             <div>{children}</div>
+             {children}
         </div>
        
       </body>
