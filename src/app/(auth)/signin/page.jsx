@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import SendOTPForm from "./SendOTPForm";
+import http from "@/services/httpServices";
+import toast from "react-hot-toast";
 
 function SignIn() {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -8,9 +10,17 @@ function SignIn() {
     setPhoneNumber(e.target.value);
   };
 
-  const sendOTPCode = (e) => {
+  const sendOTPCode = async (e) => {
     e.preventDefault();
-    
+
+    try {
+      const res = await http.post("/user/get-otp", { phoneNumber });
+      const {data } = res;
+      console.log(data);
+      toast.success(data.data.message)
+    } catch (error) {
+    toast.error( error?.response?.data?.message)
+    }
   };
 
   return (

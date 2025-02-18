@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import vazirFont from "@/constants/localFont";
 import Header from "./_components/Header";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +12,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl" suppressHydrationWarning>
       <body className={`${vazirFont.variable}  font-sans `}>
-        <Header/>
+        <Toaster />
+        <Header />
         <div className="xl:max-w-screen-xl container">{children}</div>
       </body>
     </html>
