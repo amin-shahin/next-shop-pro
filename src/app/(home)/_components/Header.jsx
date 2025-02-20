@@ -1,10 +1,27 @@
+"use client";
+import { getUserProfileDataApi } from "@/services/authServices";
+import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 
 function Header() {
+  const { data, error, isLoading } = useQuery({
+    queryKey: ["get-user"],
+    queryFn: getUserProfileDataApi,
+    retry: false,
+  });
+
+  const {user, cart } = data || {};
+  console.log(data);
+  
+
   return (
     <header className="shadow-md mb-10">
       <nav>
-        <ul className="flex items-center justify-between container py-2 xl:max-w-screen-xl">
+        <ul
+          className={`flex items-center justify-between container py-2 xl:max-w-screen-xl transition-all duration-500 ${
+            isLoading ? "blur-sm" : "blur-0"
+          }`}
+        >
           <li>
             <Link className="block py-2" href={"/"}>
               خانه
@@ -16,8 +33,13 @@ function Header() {
             </Link>
           </li>
           <li>
+            <Link className="block py-2" href={"/cart"}>
+              سبد خرید ({cart ? cart.payDetail.orderItems.length : 0})
+            </Link>
+          </li>
+          <li>
             <Link className="block py-2" href={"/signin"}>
-              ورود
+              {user ? user.name : "ورود"}
             </Link>
           </li>
         </ul>

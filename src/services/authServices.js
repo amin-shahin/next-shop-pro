@@ -16,5 +16,8 @@ export async function checkOtpCode(data) {
 
 export async function completeProfileApi(data) {
   return await http.post("/user/complete-profile",data).then(({data}) => data.data);
+}
 
+export async function getUserProfileDataApi() {
+  return await http.get("/user/profile").then(({data}) => data.data);
 }
