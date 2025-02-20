@@ -1,4 +1,5 @@
 import vazirFont from "@/constants/localFont";
+import Providers from "@/providers/providers";
 import "@/styles/globals.css";
 import Link from "next/link";
 import { Toaster } from "react-hot-toast";
@@ -11,7 +12,7 @@ function layoutAuth({ children }) {
 
         <Link href={"/"}>بازگشت به صفحه اصلی</Link>
         <div className="flex items-center justify-center w-full min-h-svh">
-          {children}
+          <Providers> {children} </Providers>
         </div>
       </body>
     </html>

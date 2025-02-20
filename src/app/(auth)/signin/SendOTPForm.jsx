@@ -2,7 +2,7 @@
 import TextField from "@/ui/TextField";
 // import { useForm } from "react-hook-form";
 
-function SendOTPForm({ phoneNumber, onChange, onSubmit }) {
+function SendOTPForm({ phoneNumber, onChange, onSubmit ,isLoading}) {
 //   const {
 //     register,
 //     handleSubmit,
@@ -23,7 +23,8 @@ function SendOTPForm({ phoneNumber, onChange, onSubmit }) {
             className="badge--primary w-full rounded-xl py-2 hover:bg-opacity-90 transition-colors duration-150"
             type="submit"
           >
-            تایید
+            {isLoading ? "Loading..." : 'تایید'}
+            
           </button>
      
       </form>
