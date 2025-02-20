@@ -12,3 +12,9 @@ export async function checkOtpCode(data) {
 //   const { data } = res.data || {};
 //   return data;
 }
+
+
+export async function completeProfileApi(data) {
+  return await http.post("/user/complete-profile",data).then(({data}) => data.data);
+
+}

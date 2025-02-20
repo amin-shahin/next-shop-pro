@@ -34,9 +34,14 @@ function CheckOTPCode({
             renderInput={(props) => <input {...props} />}
           />
         </div>
-        <button type="submit" className="btn btn--primary w-full">
-          {isLoadingCheckOtp ? "Loading..." : "تایید"}
-        </button>
+   
+        <button
+            className="badge--primary w-full rounded-xl py-2 hover:bg-opacity-90 transition-colors duration-150"
+            type="submit"
+          >
+            {isLoadingCheckOtp ? "Loading..." : "تایید"}
+            
+          </button>
       </form>
 
       <div className="mt-5">
