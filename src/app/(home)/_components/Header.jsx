@@ -1,14 +1,11 @@
 "use client";
+import { useGetUserData } from "@/hooks/useAuth";
 import { getUserProfileDataApi } from "@/services/authServices";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 
 function Header() {
-  const { data, error, isLoading } = useQuery({
-    queryKey: ["get-user"],
-    queryFn: getUserProfileDataApi,
-    retry: false,
-  });
+  const { data, error, isLoading} = useGetUserData()
 
   const {user, cart } = data || {};
   console.log(data);
